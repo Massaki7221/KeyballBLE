@@ -9,6 +9,9 @@
 #define SCROLL 5
 #define NUM 6
 
+#define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_YEN          0x89              // ¥
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;

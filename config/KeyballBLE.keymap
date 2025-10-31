@@ -82,7 +82,7 @@
         NUM {
             bindings = <
 &kp MINUS         &kp N7          &kp N8        &kp N9  &kp COLON                                            &kp AMPERSAND    &kp EQUAL         &kp JP_YEN     &kp LS(N8)       &kp LS(N9)
-&kp SLASH         &kp N4          &kp N5        &kp N6  &kp DOUBLE_QUOTES  &trans         &kp AT             &kp EXCLAMATION  &kp LEFT_BRACKET  &kp HASH       &kp DOLLAR       &kp PERCENT
+&kp SLASH         &kp N4          &kp N5        &kp N6  &kp DOUBLE_QUOTES  &trans         &kp AT             &kp EXCLAMATION  &kp LEFT_BRACKET  &kp HASH       &kp DOLLAR       &kp CAPS
 &kp N0            &kp N1          &kp N2        &kp N3  &kp PERIOD         &kp UNDER      &kp JP_UNDERSCORE  &kp SEMI         &kp SINGLE_QUOTE  &kp RIGHT_ALT  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL
 &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LEFT_ALT  &trans  &trans             &trans         &kp BACKSPACE      &kp ENTER                                                          &kp DEL
             >;

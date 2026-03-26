@@ -16,6 +16,11 @@
 };
 
 / {
+    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+    };
+
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
@@ -63,13 +68,13 @@
 
         cpi = <1000>;
 
-        /* 必要なら向きをここで調整 */
-        /* swap-xy; */
-        /* invert-x; */
-        /* invert-y; */
-
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+
+        /* 必要なら向き調整 */
+        /* swap-xy; */
+        /* invert-x; */
+        /* invert-y; */
     };
 };

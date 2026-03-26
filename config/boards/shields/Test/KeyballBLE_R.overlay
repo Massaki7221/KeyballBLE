@@ -80,6 +80,6 @@
         /* 必要なら向き調整 */
         /* swap-xy; */
         /* invert-x; */
-        /* invert-y; */
+        invert-y; 
     };
 };

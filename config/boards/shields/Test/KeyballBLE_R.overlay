@@ -19,11 +19,16 @@
     /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
+
+        /* タイピング直後の誤発動を防ぐ */
+        require-prior-idle-ms = <300>;
     };
 
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        /* layer 4 を 700ms 有効化 */
         input-processors = <&zip_temp_layer 4 700>;
     };
 };
@@ -66,7 +71,7 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        cpi = <1000>;
+        cpi = <800>;
 
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;

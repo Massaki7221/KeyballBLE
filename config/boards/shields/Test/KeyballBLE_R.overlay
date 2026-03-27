@@ -43,7 +43,7 @@
 
         scroll_speed {
             layers = <5>;
-            input-processors = <&zip_scroll_scaler 1 2>;
+            input-processors = <&zip_scroll_scaler 1 4>;
         };
     };
 };

@@ -1,5 +1,7 @@
 #include "KeyballBLE.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -19,26 +21,28 @@
     /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
-
-        /* タイピング直後の誤発動を防ぐ */
         require-prior-idle-ms = <300>;
     };
+};
 
-    /omit-if-no-ref/ zip_scroll: zip_scroll {
-        compatible = "zmk,input-processor-scroll";
-        #input-processor-cells = <1>;
+&trackball_listener {
+    input-processors = <&zip_temp_layer 4 700>;
 
-        swap-xy;
-        scroll-divisor = <2>;
+    scroll_layer {
+        layers = <5>;
+        process-next;
+        input-processors = <&zip_xy_to_scroll_mapper>;
     };
 
-    trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
+    scroll_adjust {
+        layers = <5>;
+        process-next;
+        input-processors = <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>;
+    };
 
-    input-processors
-        = <&zip_temp_layer 4 700>   /* マウスレイヤー */
-        , <&zip_scroll 5>;            /* スクロール変換 */
+    scroll_speed {
+        layers = <5>;
+        input-processors = <&zip_scroll_scaler 1 2>;
     };
 };
 
@@ -81,6 +85,7 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         cpi = <800>;
+        invert-y;
 
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;

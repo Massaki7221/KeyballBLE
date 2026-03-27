@@ -24,12 +24,21 @@
         require-prior-idle-ms = <300>;
     };
 
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
+    /omit-if-no-ref/ zip_scroll: zip_scroll {
+        compatible = "zmk,input-processor-scroll";
+        #input-processor-cells = <1>;
 
-        /* layer 4 を 700ms 有効化 */
-        input-processors = <&zip_temp_layer 4 700>;
+        swap-xy;
+        scroll-divisor = <2>;
+    };
+
+    trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+
+    input-processors
+        = <&zip_temp_layer 4 700>   /* マウスレイヤー */
+        , <&zip_scroll 5>;            /* スクロール変換 */
     };
 };
 

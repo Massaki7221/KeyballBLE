@@ -90,10 +90,5 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-
-        /* 必要なら向き調整 */
-        /* swap-xy; */
-        /* invert-x; */
-        invert-y; 
     };
 };

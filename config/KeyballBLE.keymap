@@ -47,6 +47,9 @@
         };
     };
 
+compatible = "zmk,keymap";
+sensors = <&left_encoder>;
+
     behaviors {
         enc_scroll: enc_scroll {
             compatible = "zmk,behavior-sensor-rotate";

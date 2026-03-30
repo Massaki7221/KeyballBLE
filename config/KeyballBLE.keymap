@@ -67,7 +67,7 @@
 &kp LCTRL  &kp LEFT_SHIFT  &mt LEFT_GUI LEFT_ALT  &lt_to_layer_0 6 JP_EISU  &lt_to_layer_0 2 SPACE  &lt 3 JP_KANA      &kp BACKSPACE  &lt_to_layer_0 1 ENTER                                                      &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
+            sensor-bindings = <&msc SCRL_DOWN &msc SCRL_UP>;
         };
 
         FUNCTION {

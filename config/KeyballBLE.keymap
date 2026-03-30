@@ -47,7 +47,6 @@
         };
     };
 
-compatible = "zmk,keymap";
 sensors = <&left_encoder>;
 
     behaviors {

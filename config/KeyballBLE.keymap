@@ -96,10 +96,10 @@
 
         NUM {
             bindings = <
-&kp MINUS         &kp N7          &kp N8                 &kp N9  &kp LS(SEMICOLON)                                    &kp DOLLAR       &kp JP_YEN        &kp PLUS       &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp SLASH         &kp N4          &kp N5                 &kp N6  &kp APOSTROPHE     &trans         &trans             &kp EXCLAMATION  &kp LEFT_BRACKET  &kp INSERT     &kp SCROLLLOCK     &kp LS(CAPS)
-&kp N0            &kp N1          &kp N2                 &kp N3  &kp PERIOD         &kp UNDER      &kp JP_UNDERSCORE  &kp SEMICOLON    &kp LS(APOS)      &kp RIGHT_ALT  &kp RIGHT_SHIFT    &kp RIGHT_CONTROL
-&kp LEFT_CONTROL  &kp LEFT_SHIFT  &mt LEFT_GUI LEFT_ALT  &trans  &trans             &trans         &trans             &trans                                                               &trans
+&kp MINUS         &kp N7          &kp N8                 &kp N9  &kp LS(SEMICOLON)                                     &kp DOLLAR       &kp JP_YEN        &kp PLUS       &kp RIGHT_BRACKET  &kp BACKSLASH
+&kp SLASH         &kp N4          &kp N5                 &kp N6  &kp LS(APOSTROPHE)  &trans         &trans             &kp EXCLAMATION  &kp LEFT_BRACKET  &kp INSERT     &kp SCROLLLOCK     &kp LS(CAPS)
+&kp N0            &kp N1          &kp N2                 &kp N3  &kp PERIOD          &kp UNDER      &kp JP_UNDERSCORE  &kp SEMICOLON    &kp APOS          &kp RIGHT_ALT  &kp RIGHT_SHIFT    &kp RIGHT_CONTROL
+&kp LEFT_CONTROL  &kp LEFT_SHIFT  &mt LEFT_GUI LEFT_ALT  &trans  &trans              &trans         &trans             &trans                                                               &trans
             >;
         };
 

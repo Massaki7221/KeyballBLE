@@ -1,7 +1,6 @@
 #include "KeyballBLE.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -24,23 +23,37 @@
         require-prior-idle-ms = <300>;
     };
 
+    input_processors {
+        y_to_scroll_mapper: y_to_scroll_mapper {
+            compatible = "zmk,input-processor-code-mapper";
+            #input-processor-cells = <0>;
+            type = <INPUT_EV_REL>;
+            map = <INPUT_REL_Y INPUT_REL_WHEEL>;
+        };
+    };
+
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        /* 通常時はマウスレイヤーを一時有効化 */
         input-processors = <&zip_temp_layer 4 700>;
 
+        /* SCROLL layer = 5 のときだけ、Y軸をスクロールにする */
         scroll_layer {
             layers = <5>;
             process-next;
-            input-processors = <&zip_xy_to_scroll_mapper>;
+            input-processors = <&y_to_scroll_mapper>;
         };
 
+        /* スクロール方向補正 */
         scroll_adjust {
             layers = <5>;
             process-next;
-            input-processors = <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>;
+            input-processors = <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
         };
 
+        /* スクロール速度を落とす */
         scroll_speed {
             layers = <5>;
             input-processors = <&zip_scroll_scaler 1 4>;

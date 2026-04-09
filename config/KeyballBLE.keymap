@@ -18,7 +18,7 @@
     quick-tap-ms = <0>;
 };
 
-&msc { time-to-max-speed-ms = <0>; };
+&msc { time-to-max-speed-ms = <150>; };
 
 / {
     combos {
@@ -55,8 +55,8 @@
         enc_scroll: enc_scroll {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            tap-ms = <200>;
-            bindings = <&msc MOVE_Y(-12)>, <&msc MOVE_Y(12)>;
+            tap-ms = <280>;
+            bindings = <&msc MOVE_Y(-4)>, <&msc MOVE_Y(4)>;
         };
 
         lt_to_layer_0: lt_to_layer_0 {

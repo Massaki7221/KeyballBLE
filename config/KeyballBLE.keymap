@@ -85,10 +85,10 @@
 
         FUNCTION {
             bindings = <
-&kp ESCAPE        &trans          &kp RG(E)     &trans  &trans                          &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&kp TAB           &kp RG(RS(S))   &kp RG(D)     &trans  &trans  &kp C_MUTE      &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans            &trans          &kp LEFT_GUI  &trans  &trans  &mkp LCLK       &trans  &trans  &trans  &trans  &trans  &kp F11
-&kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LEFT_ALT  &trans  &trans  &trans          &trans  &trans                          &kp F12
+&kp ESCAPE        &trans          &kp RG(E)     &trans  &trans                          &kp F1   &kp F2   &kp F3         &kp F4           &kp F5
+&kp TAB           &kp RG(RS(S))   &kp RG(D)     &trans  &trans  &kp C_MUTE      &trans  &kp F6   &kp F7   &kp F8         &kp F9           &kp F10
+&trans            &trans          &kp LEFT_GUI  &trans  &trans  &mkp LCLK       &trans  &kp F11  &kp F12  &kp RIGHT_ALT  &kp RIGHT_SHIFT  &kp RCTRL
+&kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp LEFT_ALT  &trans  &trans  &trans          &trans  &trans                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;

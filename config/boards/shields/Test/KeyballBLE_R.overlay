@@ -24,14 +24,11 @@
         require-prior-idle-ms = <300>;
     };
 
-    
+    /* STEP2切り分け中は無効化
 　　trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-       };
-
-　　　/* STEP2切り分け中は無効化
-　　　　input-processors = <&zip_temp_layer 4 700>;
+    　　input-processors = <&zip_temp_layer 4 700>;
 
         scroll_layer {
             layers = <5>;
@@ -49,9 +46,9 @@
             layers = <5>;
             input-processors = <&zip_scroll_scaler 1 5>;
         };
-    */
-　　
-　　
+    }; 
+　　*/
+　　　　
 };
 
 &pinctrl {

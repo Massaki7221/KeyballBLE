@@ -35,6 +35,12 @@ trackball_listener: trackball_listener {
         process-next;
         input-processors = <&zip_xy_to_scroll_mapper>;
     };
+
+    scroll_adjust {
+        layers = <5>;
+        process-next;
+        input-processors = <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+    };
 };
 };
 

@@ -24,6 +24,14 @@
         #input-processor-cells = <2>;
         require-prior-idle-ms = <300>;
     };
+};
+
+/{
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
+};
 
     /* STEP2切り分け中は無効化
     trackball_listener: trackball_listener {
@@ -49,7 +57,6 @@
         };
     }; 
 　　*/
-};
 
 &pinctrl {
     spi0_default: spi0_default {

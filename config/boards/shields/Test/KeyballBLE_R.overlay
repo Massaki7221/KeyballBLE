@@ -24,14 +24,19 @@
         #input-processor-cells = <2>;
         require-prior-idle-ms = <300>;
     };
-};
 
-/{
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&zip_temp_layer 4 450>;
     };
+
+        scroll_layer {
+            layers = <5>;
+            process-next;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+
 };
 
     /* STEP2切り分け中は無効化
@@ -39,12 +44,6 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         input-processors = <&zip_temp_layer 4 700>;
-
-        scroll_layer {
-            layers = <5>;
-            process-next;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-        };
 
         scroll_adjust {
             layers = <5>;

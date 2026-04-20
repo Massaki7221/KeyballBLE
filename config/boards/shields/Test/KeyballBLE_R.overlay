@@ -25,17 +25,11 @@
         require-prior-idle-ms = <300>;
     };
 
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_temp_layer 4 450>;
-    };
-
-        scroll_layer {
-            layers = <5>;
-            process-next;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-        };
+trackball_listener: trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+    input-processors = <&zip_xy_to_scroll_mapper>;
+};
 
 };
 

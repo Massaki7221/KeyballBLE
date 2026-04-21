@@ -41,27 +41,13 @@ trackball_listener: trackball_listener {
         process-next;
         input-processors = <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
     };
-};
-};
-
-    /* STEP2切り分け中は無効化
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_temp_layer 4 700>;
-
-        scroll_adjust {
-            layers = <5>;
-            process-next;
-            input-processors = <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
-        };
 
         scroll_speed {
             layers = <5>;
             input-processors = <&zip_scroll_scaler 1 5>;
         };
     }; 
-　　*/
+};
 
 &pinctrl {
     spi0_default: spi0_default {

@@ -95,20 +95,3 @@ trackball_listener: trackball_listener {
         y-input-code = <INPUT_REL_Y>;
     };
 };
-
-&msc {
-    time-to-max-speed-ms = <150>;
-};
-
-/ {
-    sensors = <&left_encoder>;
-
-    behaviors {
-        enc_scroll: enc_scroll {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            tap-ms = <300>;
-            bindings = <&msc MOVE_Y(-2)>, <&msc MOVE_Y(2)>;
-        };
-    };
-};
